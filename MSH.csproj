@@ -2,14 +2,8 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>MSH</RootNamespace>
-    <PublishSingleFile>true</PublishSingleFile>
-    <PublishTrimmed>false</PublishTrimmed>
-    <PublishReadyToRun>true</PublishReadyToRun>
-    <SelfContained>false</SelfContained>
-    <DebugType>embedded</DebugType>
   </PropertyGroup>
 
 </Project>
