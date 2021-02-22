@@ -14,7 +14,14 @@ namespace MSH
             {
                 Console.ResetColor();
                 DateTime date = DateTime.Now;
-                Console.Write("[{0:g}] " + Directory.GetCurrentDirectory() + "\\", date);
+                Console.Write("[{0:g}] ", date);
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write(Environment.UserName + "@" + Environment.MachineName);
+                Console.ResetColor();
+                Console.Write(":");
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.Write(Directory.GetCurrentDirectory());
+                Console.ResetColor();
                 Console.Write("> ");
                 Console.ResetColor();
                 string[] input = Console.ReadLine().Split(' ',2);
@@ -44,7 +51,7 @@ namespace MSH
         {
             if (input[0] == "connect")
             {
-                System.Console.WriteLine("This feature is still being worked on.");
+                Console.WriteLine("This feature is still being worked on.");
                 return 0;
             } else if (input[0] == "exit")
             {
@@ -55,7 +62,7 @@ namespace MSH
                 return -2;
             } else if (input[0] == "cd")
             {
-                if (!(input.Length >= 2)) {System.Console.WriteLine("Please specify a path"); Console.Beep(); return 1;}
+                if (!(input.Length >= 2)) {Console.WriteLine("Please specify a path"); Console.Beep(); return 1;}
                 try
                 {
                     Directory.SetCurrentDirectory(input[1]);
