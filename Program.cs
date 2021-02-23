@@ -34,7 +34,7 @@ namespace MSH
                 else if (status == 0)
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.Write("V ");
+                    Console.Write("√ ");
                 }
                 else if (status == -2)
                 {
