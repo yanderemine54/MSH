@@ -96,6 +96,9 @@ namespace MSH
                     {
                         Console.WriteLine("msh: " + input[0] + ": command not found.");
                             return 1;
+                    } catch (System.InvalidOperationException)
+                    {
+                        return -2;
                     }
                 }
                 else
@@ -110,7 +113,10 @@ namespace MSH
                     {
                         Console.WriteLine("msh: " + input[0] + ": command not found.");
                         return 1;
-                    } 
+                    } catch (System.InvalidOperationException)
+                    {
+                        return -2;
+                    }
                 }
             }
         }
