@@ -25,7 +25,7 @@ namespace MSH
                 Console.Write("> ");
                 Console.ResetColor();
                 string[] input = Console.ReadLine().Split(' ',2);
-                status = exec(input);
+                status = Exec(input);
                 if (status != 0 && status != -1 && status != -2)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -47,7 +47,7 @@ namespace MSH
             } while (status != -1);
           
         }
-        static int exec(string[] input)
+        static int Exec(string[] input)
         {
             if (input[0] == "connect")
             {
@@ -68,7 +68,7 @@ namespace MSH
                     Directory.SetCurrentDirectory(input[1]);
                     return 0;
                 }
-                catch (System.IO.DirectoryNotFoundException)
+                catch (DirectoryNotFoundException)
                 {
                     Console.WriteLine("msh: cd: Directory not found");
                     return 1;
@@ -96,7 +96,7 @@ namespace MSH
                     {
                         Console.WriteLine("msh: " + input[0] + ": command not found.");
                             return 1;
-                    } catch (System.InvalidOperationException)
+                    } catch (InvalidOperationException)
                     {
                         return -2;
                     }
@@ -113,7 +113,7 @@ namespace MSH
                     {
                         Console.WriteLine("msh: " + input[0] + ": command not found.");
                         return 1;
-                    } catch (System.InvalidOperationException)
+                    } catch (InvalidOperationException)
                     {
                         return -2;
                     }
