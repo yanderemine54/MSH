@@ -62,7 +62,12 @@ namespace MSH
                 return -2;
             } else if (input[0] == "cd")
             {
-                if (!(input.Length >= 2)) {Console.WriteLine("Please specify a path"); Console.Beep(); return 1;}
+                if (!(input.Length >= 2)) 
+                {
+                    Console.WriteLine("Please specify a path");
+                    Console.Beep();
+                    return 1;
+                }
                 try
                 {
                     Directory.SetCurrentDirectory(input[1]);
